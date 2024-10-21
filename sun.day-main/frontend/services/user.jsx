@@ -2,6 +2,8 @@ import getConfig from "next/config";
 
 const { publicRuntimeConfig } = getConfig();
 
+// קריאת ל API URL שהגדרנו  כדי שהאפליקציה תדע לאן לשלוח בקשות ל API
+// והוספת הנתיב ל API'S
 const API_URL = publicRuntimeConfig.API_URL + "/api/v1/";
 
 const getUser = async (token) => {

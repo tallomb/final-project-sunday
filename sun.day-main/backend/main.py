@@ -10,6 +10,7 @@ origins = [
     "http://localhost:8080",
 ]
 
+# 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,

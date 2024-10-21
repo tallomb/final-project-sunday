@@ -30,6 +30,7 @@ export default function Register() {
     }
   }, [state.user]);
 
+// בדיקת קלט הזנת שדות בהליך ההרשמה 
   const handleSubmit = async (e) => {
     e.preventDefault();
     dispatch({ type: "REGISTER" });
@@ -46,8 +47,11 @@ export default function Register() {
       return;
     }
     try {
+      // שליחת בקשת הרשמה לשרת
       await AuthService.register(email, password, firstName, lastName);
+      // ביצוע התחברות אוטומטית לאחר הרשמה מוצלחת
       const response = await AuthService.login(email, password);
+        // שליפת פרטי המשתמש מהשרת
       const user = await UserService.getUser(response.access_token);
 
       const payload = {
