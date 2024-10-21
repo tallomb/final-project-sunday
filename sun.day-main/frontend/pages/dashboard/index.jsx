@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Layout from "../../components/Layout";
 import Widget from "../../components/Widget/Widget";
 import Statistic from "../../components/Statistic";
+import Tasks from "../../components/TasksTable";
 import Customers from "../../components/Customers";
 import {
   CollectionIcon,
@@ -99,7 +100,7 @@ function dashboard() {
         <div className="flex flex-col lg:flex-row justify-between gap-6">
           <Widget style="lg:w-1/2 h-56" title="פרויקטים">
             {state.tasks.length > 0 ? (
-                <></>
+              <Tasks />
             ) : (
               <div className="flex flex-col items-center justify-items-start min-h-full gap-2">
                 <ClipboardListIcon className="h-28 w-28 bg-gray-50 text-gray-300 p-4 rounded-full" />

@@ -14,6 +14,11 @@ function Nav(props) {
       title: "לקוחות",
       icon: "/assets/icons/customers.svg",
     },
+    {
+      href: "/statistics",
+      title: "סטטיסטיקות",
+      icon: "/assets/icons/stats-active.svg",
+    },
   ];
 
   const router = useRouter();

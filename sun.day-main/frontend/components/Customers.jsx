@@ -29,9 +29,27 @@ function Projects() {
     setModal(!modal);
   };
 
+  const deleteCustomerTasks = async (customerId) => {
+    try {
+      const tasks = await UserService.getTasksByCustomer(
+        state.token,
+        customerId
+      );
+      tasks.forEach((task) => {
+        dispatch({
+          type: "DELETE_TASK_SUCCESS",
+          payload: { taskId: task._id },
+        });
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   const handleDelete = async (customerId) => {
     dispatch({ type: "DELETE_CUSTOMER" });
     try {
+      deleteCustomerTasks(customerId);
 
       await UserService.deleteCustomer(state.token, customerId);
       const payload = {

@@ -1,10 +1,10 @@
 from fastapi import Depends, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routers.api.v1 import users, customers
+from routers.api.v1 import users, customers, tasks
 from core.config import settings
 
 app = FastAPI()
-
+#  השרתים שמורשים לדבר עם הבקאנד
 origins = [
     "http://localhost:3000",
     "http://localhost:8080",
@@ -18,7 +18,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
+# יצירת נתיב לתהליך ניהול משתמשים
 app.include_router(
 	users.router, 
 	prefix= settings.API_V1_PATH + "/users", 
@@ -29,6 +29,12 @@ app.include_router(
 	customers.router, 
 	prefix= settings.API_V1_PATH + "/customers", 
 	tags=["Customers"]
+)
+
+app.include_router(
+	tasks.router, 
+	prefix= settings.API_V1_PATH + "/tasks", 
+	tags=["Tasks"]
 )
 
 @app.get("/")

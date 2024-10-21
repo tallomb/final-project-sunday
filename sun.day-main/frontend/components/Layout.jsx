@@ -33,6 +33,8 @@ function Layout({ children }) {
 
       const breadCrumbTranslate = {
         Customers: "לקוחות",
+        Statistics: "סטטיסטיקות",
+        Tasks: "משימות",
       };
 
       const dynamicBreadCrumb = path.charAt(0).toUpperCase() + path.slice(1);

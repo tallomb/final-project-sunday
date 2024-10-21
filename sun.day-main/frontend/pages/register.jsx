@@ -11,17 +11,19 @@ import { StateContext, DispatchContext } from "../context/context";
 import { useRouter } from "next/router";
 import autoLogout from "../components/autoLogout";
 
+// שמירת נתוני המשתמש בסטייט מקומי של הקומפוננטה
 export default function Register() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  // גישה לסטייט ועדכון
   const state = React.useContext(StateContext);
   const dispatch = React.useContext(DispatchContext);
 
   const router = useRouter();
-
+// פקודה לביצוע ניווט לדשבורד בעת הצלחת התחברות
   useEffect(() => {
     if (state.user) {
       router.push("/dashboard");
