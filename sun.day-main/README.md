@@ -1,8 +1,8 @@
 
 # Sun.Day Web Application
 
-Sun.Day this is a simple web application that I developed in part of "Final project Tel Aviv - Yafo Academy",
-I developed it to manage my clients and the tasks of each of them.
+Sun.Day this is a simple web application that We developed in part of "Final project Tel Aviv - Yafo Academy",
+We developed it to manage my clients and the tasks of each of them.
 
 ## Requirements
 
@@ -28,17 +28,6 @@ To run this project, you will need to do the following steps:
 4. Enjoy! 🤩 ☁️
 
    Sun.Day Application is on the air: http://localhost:3000
-## Roadmap
-
-- [x] First microservice: Backend with FastAPI & Pydantic
-- [x] Second microservice: Frontend with React.js
-  - [x] Welcome Page
-  - [x] Login / Register
-  - [x] Dashboard
-  - [x] Customers
-  - [x] Single Customer
-  - [x] Search / Add / Edit / Delete Customer
-- [x] Third microservice: Database MongoDB
 
 ```sh
 Project tree:
