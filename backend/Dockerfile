@@ -1,10 +1,8 @@
 FROM python:3.9
 
-WORKDIR /backend
-
 COPY ./requirements.txt .
 
-RUN pip install --no-cache-dir --upgrade -r /backend/requirements.txt
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 COPY ./main.py .
 
@@ -19,6 +17,8 @@ ADD models ./models
 ADD db ./db
 
 ADD tests ./tests
+
+WORKDIR /code
 
 ENV DATABASE_USER="sunday"
 
