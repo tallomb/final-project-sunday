@@ -20,7 +20,6 @@ services:
         value: "30"
 
   - name: frontend
-    context: ./frontend
     type: web
     env: docker
     dockerfilePath: ./frontend/Dockerfile
