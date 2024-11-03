@@ -3,8 +3,6 @@ services:
     type: web
     env: docker
     dockerfilePath: ./backend/Dockerfile
-    buildCommand: ""
-    startCommand: "uvicorn main:app --host 0.0.0.0 --port 8080"
     envVars:
       - key: DATABASE_USER
         value: "sunday"
@@ -25,8 +23,6 @@ services:
     type: web
     env: docker
     dockerfilePath: ./frontend/Dockerfile
-    buildCommand: ""
-    startCommand: "yarn start"
     envVars:
       - key: API_URL
         value: "https://backend-service-url"  # כתובת ה-Backend שמחובר בפריסה ב-Render
