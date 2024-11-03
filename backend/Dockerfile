@@ -16,7 +16,7 @@ ADD routers ./routers
 
 ADD models ./models
 
-ADD db ./db
+# ADD db ./db
 
 # ADD tests ./tests
 
