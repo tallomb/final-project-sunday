@@ -23,7 +23,6 @@ services:
       - 3000
 
   - name: database
-    type: database
     env: docker
     dockerfilePath: ""
     image: mongo
