@@ -1,0 +1,17 @@
+build:
+  docker:
+    # שירות הבקאנד
+    web:  
+      context: ./backend  # הנתיב לתיקיית הבקאנד, בו נמצא ה-Dockerfile
+      dockerfile: Dockerfile  # הקובץ ש-Heroku ישתמש בו כדי לבנות את הבקאנד
+
+    # שירות הפרונטאנד
+    frontend:  
+      context: ./frontend  # הנתיב לתיקיית הפרונטאנד, בו נמצא ה-Dockerfile
+      dockerfile: Dockerfile  # הקובץ ש-Heroku ישתמש בו כדי לבנות את הפרונטאנד
+
+config:  # משתני הסביבה החיוניים לפרויקט
+  DATABASE_USER: "sunday"  # שם המשתמש של בסיס הנתונים
+  DATABASE_PASSWORD: "123456"  # סיסמת בסיס הנתונים
+  DATABASE_HOST: "database"  # שם שירות בסיס הנתונים כפי שמוגדר ב-compose
+  DATABASE_PORT: "27017"  # הפורט שעליו מאזין בסיס הנתונים
