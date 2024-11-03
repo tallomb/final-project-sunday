@@ -8,7 +8,9 @@ app = FastAPI()
 origins = [
     "http://localhost:3000",
     "http://localhost:8080",
-    "*"
+    "*",
+    "https://final-project-sunday-backend.onrender.com",
+     "https://final-project-sunday-frontend2.onrender.com",
 ]
 
 # 
