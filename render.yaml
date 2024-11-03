@@ -4,30 +4,21 @@ services:
     env: docker
     dockerfilePath: ./backend/Dockerfile
     buildCommand: ""
-    startCommand: "uvicorn main:app --host 0.0.0.0 --port 5000"
+    startCommand: "uvicorn main:app --host 0.0.0.0 --port 8080"
     envVars:
-      DATABASE_USER: "sunday"
-      DATABASE_PASSWORD: "123456"
-      DATABASE_HOST: "database"
-      DATABASE_PORT: "27017"
-    ports:
-      - 5000
+      DATABASE_USER: "sunday"                # שם המשתמש של מסד הנתונים
+      DATABASE_PASSWORD: "123456"            # סיסמת מסד הנתונים
+      DATABASE_HOST: "your-mongodb-host"     # עדכן עם ה-Host של MongoDB מה-Render
+      DATABASE_PORT: "27017"                 # יציאת MongoDB כברירת מחדל
+      SECRET_KEY: "09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7"
+      ALGORITHM: "HS256"
+      ACCESS_TOKEN_EXPIRE_MINUTES: "30"
 
   - name: frontend
     type: web
     env: docker
     dockerfilePath: ./frontend/Dockerfile
     buildCommand: ""
-    startCommand: "npm start"
-    ports:
-      - 3000
-
-  - name: database
-    env: docker
-    dockerfilePath: ""
-    image: mongo
-    ports:
-      - 27017
+    startCommand: "yarn start"
     envVars:
-      MONGO_INITDB_ROOT_USERNAME: "sunday"
-      MONGO_INITDB_ROOT_PASSWORD: "123456"
+      API_URL: "https://<backend-service-url>"  # כתובת ה-Backend לאחר ההגדרה ב-Render
