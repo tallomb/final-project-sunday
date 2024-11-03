@@ -8,7 +8,7 @@ services:
     envVars:
       DATABASE_USER: "sunday"                # שם המשתמש של מסד הנתונים
       DATABASE_PASSWORD: "123456"            # סיסמת מסד הנתונים
-      DATABASE_HOST: "your-mongodb-host"     # עדכן עם ה-Host של MongoDB מה-Render
+      DATABASE_HOST: "database"     # עדכן עם ה-Host של MongoDB מה-Render
       DATABASE_PORT: "27017"                 # יציאת MongoDB כברירת מחדל
       SECRET_KEY: "09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7"
       ALGORITHM: "HS256"
