@@ -6,19 +6,19 @@ COPY ./requirements.txt .
 
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
-# COPY ./main.py .
+COPY ./main.py .
 
-# COPY ./__init__.py .
+COPY ./__init__.py .
 
-# ADD core ./core
+ADD core ./core
 
-# ADD routers ./routers
+ADD routers ./routers
 
-# ADD models ./models
+ADD models ./models
 
-# ADD db ./db
+ADD db ./db
 
-# ADD tests ./tests
+ADD tests ./tests
 
 ENV DATABASE_USER="sunday"
 
