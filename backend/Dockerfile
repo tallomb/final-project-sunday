@@ -1,10 +1,10 @@
 FROM python:3.9
 
-WORKDIR /code
+WORKDIR /backend
 
 COPY ./requirements.txt .
 
-RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+RUN pip install --no-cache-dir --upgrade -r /backend/requirements.txt
 
 COPY ./main.py .
 
