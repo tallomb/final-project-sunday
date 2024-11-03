@@ -1,0 +1,34 @@
+services:
+  - name: backend
+    type: web
+    env: docker
+    dockerfilePath: ./backend/Dockerfile
+    buildCommand: ""
+    startCommand: "uvicorn main:app --host 0.0.0.0 --port 5000"
+    envVars:
+      DATABASE_USER: "sunday"
+      DATABASE_PASSWORD: "123456"
+      DATABASE_HOST: "database"
+      DATABASE_PORT: "27017"
+    ports:
+      - 5000
+
+  - name: frontend
+    type: web
+    env: docker
+    dockerfilePath: ./frontend/Dockerfile
+    buildCommand: ""
+    startCommand: "npm start"
+    ports:
+      - 3000
+
+  - name: database
+    type: database
+    env: docker
+    dockerfilePath: ""
+    image: mongo
+    ports:
+      - 27017
+    envVars:
+      MONGO_INITDB_ROOT_USERNAME: "sunday"
+      MONGO_INITDB_ROOT_PASSWORD: "123456"
