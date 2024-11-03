@@ -72,7 +72,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <StateContext.Provider value={state}>
       <DispatchContext.Provider value={dispatch}>
-        {Component({...pageProps})}
+        <Component {...pageProps} />
       </DispatchContext.Provider>
     </StateContext.Provider>
   );
