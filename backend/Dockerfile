@@ -18,11 +18,11 @@ ADD models ./models
 
 ADD db ./db
 
-ADD tests ./tests
+# ADD tests ./tests
 
-ENV DATABASE_USER=<your_user>
+ENV DATABASE_USER="sunday"
 
-ENV DATABASE_PASSWORD=<your_password>
+ENV DATABASE_PASSWORD="123456"
 
 ENV PYTHONPATH "${PYTHONPATH}:/code"
 
