@@ -3,6 +3,7 @@ services:
     type: web
     env: docker
     dockerfilePath: ./backend/Dockerfile
+    context: ./backend   # הוספת context עבור backend
     envVars:
       - key: DATABASE_USER
         value: "sunday"
@@ -20,6 +21,7 @@ services:
         value: "30"
 
   - name: frontend
+    context: ./frontend
     type: web
     env: docker
     dockerfilePath: ./frontend/Dockerfile
